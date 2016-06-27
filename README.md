@@ -8,13 +8,13 @@ Next do the follow steps:
 
 ## Clone the repository
 
-   git clone git@github.com:minditech/dimacs_example.git
+    git clone git@github.com:minditech/dimacs_example.git
 
 ## Build the solver
 
-   docker build -t DOCKERHUB_USERNAME/SOLVER_NAME:SOLVER_VERSION .
+    docker build -t DOCKERHUB_USERNAME/SOLVER_NAME:SOLVER_VERSION .
 
 ## Push to DockerHub
 
-   docker login -u DOCKERHUB_USERNAME -p DOCKERHUB_PASSWORD
-   docker push DOCKERHUB_USERNAME/SOLVER_NAME:SOLVER_VERSION
+    docker login -u DOCKERHUB_USERNAME -p DOCKERHUB_PASSWORD
+    docker push DOCKERHUB_USERNAME/SOLVER_NAME:SOLVER_VERSION
