@@ -1,8 +1,8 @@
 # Login to dockerhub.com
-docker login -u your_dockerhub_username -p your_dockerhub_password
+docker login -u DOCKERHUB_USERNAME -p DOCKERHUB_PASSWORD
 
 # Build container
-docker build -t your_dockerhub_username/your_solver_name:your_solver_version .
+docker build -t DOCKERHUB_USERNAME/SOLVER_NAME:SOLVER_VERSION .
 
 # Push container to repository
-docker push your_dockerhub_username/your_solver_name
+docker push DOCKERHUB_USERNAME/SOLVER_NAME:SOLVER_VERSION
