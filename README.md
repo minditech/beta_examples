@@ -7,14 +7,14 @@ If you do not have one already, create a <a href="http://dockerhub.com">DockerHu
 Next do the follow steps:
 
 1. Clone the repository
- 
-    git@github.com:minditech/dimacs_example.git
+
+`git clone git@github.com:minditech/dimacs_example.git`
 
 2. Build the solver
 
-    docker build -t DOCKERHUB_USERNAME/SOLVER_NAME:SOLVER_VERSION .
+`docker build -t DOCKERHUB_USERNAME/SOLVER_NAME:SOLVER_VERSION .`
 
 3. Push to DockerHub
 
-    docker login -u DOCKERHUB_USERNAME -p DOCKERHUB_PASSWORD
-    docker push DOCKERHUB_USERNAME/SOLVER_NAME:SOLVER_VERSION
+`docker login -u DOCKERHUB_USERNAME -p DOCKERHUB_PASSWORD`
+`docker push DOCKERHUB_USERNAME/SOLVER_NAME:SOLVER_VERSION`
