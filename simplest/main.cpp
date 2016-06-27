@@ -1,3 +1,4 @@
+//includes
 #include <iostream>
 #include <algorithm>
 #include <functional>
@@ -9,6 +10,7 @@
 #include <vector>
 #include <random>
 
+//helper function to split string on a delimeter
 std::vector<std::string> split_string(const std::string& input_str, const char delim)
 {
     std::istringstream tmp(input_str);
@@ -21,14 +23,17 @@ std::vector<std::string> split_string(const std::string& input_str, const char d
     return input;
 }
 
+//define clause type
 typedef std::pair<std::vector<std::pair<unsigned,bool> >, double> clause_type;
 
+//define instance type
 struct instance_type
 {
     std::size_t N_;
     std::vector<clause_type> clauses_;
 };
 
+//read dimacs format
 instance_type read_graph_dimacs(const std::string& config_file)
 {
     const bool weighted(config_file.find(".wcnf") != std::string::npos);
@@ -85,6 +90,7 @@ instance_type read_graph_dimacs(const std::string& config_file)
     return I;
 }
 
+//simplest solver
 class solver
 {
 
@@ -114,17 +120,23 @@ private:
 
 int main(int argc, char* argv[])
 {
+    //input arguments
     assert(argc == 2);
     const std::string graph_file(argv[1]);
 
+    //initialise problem
     const auto I(read_graph_dimacs(graph_file));
 
+    //initialise solver
     solver S(I);
 
+    //run solver
     S.solve();
 
+    //get variables
     const auto variables(S.get_variables());
 
+    //print solution to cout
     std::cout << "v ";
     for(unsigned i = 0; i < variables.size(); ++i)
         std::cout << (variables[i] ? "" : "-") << std::to_string(i+1) << " ";
